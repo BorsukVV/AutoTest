@@ -1,0 +1,34 @@
+plugins {
+    id("org.jetbrains.kotlin.jvm") version "1.6.20-RC"
+    id 'application'
+    id 'jacoco'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin"
+    }
+}
+
+dependencies {
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk8
+    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version: '1.6.20'
+    // https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin
+    implementation group: 'org.jacoco', name: 'jacoco-maven-plugin', version: '0.8.8'
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    //testCompile group: 'junit', name: 'junit', version: '4.13.2'
+    // https://mvnrepository.com/artifact/org.apache.maven/maven-plugin-api
+    implementation group: 'org.apache.maven', name: 'maven-plugin-api', version: '3.8.5'
+// https://mvnrepository.com/artifact/org.apache.maven/maven-core
+    implementation group: 'org.apache.maven', name: 'maven-core', version: '3.8.5'
+// https://mvnrepository.com/artifact/org.apache.maven.plugin-tools/maven-plugin-annotations
+    compileOnly group: 'org.apache.maven.plugin-tools', name: 'maven-plugin-annotations', version: '3.6.4'
+// https://mvnrepository.com/artifact/org.apache.maven.reporting/maven-reporting-api
+    implementation group: 'org.apache.maven.reporting', name: 'maven-reporting-api', version: '3.1.0'
+}
